@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,x11names]{refart}
+\documentclass[11pt,a4paper,x11names,twoside]{refart}
 
 \usepackage{amsmath}
 % Load multicolumn environment
@@ -30,10 +30,11 @@
 % Additional text symbols
 \usepackage[full]{textcomp}
 
+% Uncomment these if you want to use different fonts in the exam.
 % Define the fonts for the exam. Namely Times New Roman as the main font, Helvetica as the sans serif font, and American Typewriter as the mono font. By default this will load the matching maths fonts
-\setmainfont{TeX Gyre Termes}[Numbers=Lining,Mapping={Common,Rare},Contextuals={WordInitial,Swash}]
-\setsansfont{TeX Gyre Heros}[Numbers=Lining,Mapping={Common,Rare},Contextuals={WordInitial,Swash}]
-\setmonofont{American Typewriter}[Scale=MatchUppercase]
+\setmainfont{TeX Gyre Termes}[Numbers=Lining,Ligatures={Common,Rare,TeX},Contextuals={WordInitial,Swash}]
+\setsansfont{TeX Gyre Heros}[Numbers=Lining,Ligatures={Common,Rare,TeX},Contextuals={WordInitial,Swash}]
+\setmonofont{Courier New}[Scale=MatchUppercase]
 
 
 % Load additional tikz drawing libraries which are required for some exams.
@@ -64,16 +65,18 @@
 
 % Define the \examend command
 
-\newcommand{\examend}[1]{ \maxipageruletrue\begin{maxipage}\centerline{\large \textbf{\textsc{End of Examination}}}\end{maxipage}}
+\newcommand{\examend}[1]{~\vfill \maxipageruletrue\begin{maxipage}\centerline{\large \textbf{\textsc{End of Examination}}}\end{maxipage}\vfill}
 
 
 % set the text fraction of the page
 \settextfraction{0.8}
 
 % Define the headers and footer for the exam. This will need to be modified for your exam as required.
-\fancyhead{\sffamily{\textsc{\footnotesize{Mat1100 — Foundation Mathematics } \hfill {{Page \thepage~of~\pageref{LastPage}}} \\
-\hfill{{Examination Period — Semester 2, 2015}\hfill }}}
-}
+\fancyhead[O]{\sffamily\textsc{\footnotesize Mat1100 — Foundation Mathematics  \hfill Page \thepage~of~\pageref{LastPage} \\
+\hfill Examination Period — Semester 2, 2015\hfill }}
+\fancyhead[E]{\sffamily\textsc{\footnotesize Page \thepage~of~\pageref{LastPage} \hfill Mat1100 — Foundation Mathematics  \\
+\hfill Examination Period — Semester 2, 2015\hfill }}
+
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
@@ -128,8 +131,8 @@
   % Set up the exam layout
   \pagestyle{fancy}
   \addtolength{\headheight}{\baselineskip}
-  \fancyheadoffset[L]{2.75cm}
-  \fancyfootoffset[L]{2.75cm}
+  \fancyheadoffset[L]{3.2cm}
+  \fancyfootoffset[L]{3.2cm}
   \setcounter{page}{1}
   \pagenumbering{arabic}
 
